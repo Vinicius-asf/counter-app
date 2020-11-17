@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Simple Counter App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Created alongside the [React Tutorial for Beginners](https://www.youtube.com/watch?v=Ke90Tje7VS0)
 
 ## Available Scripts
 
