@@ -36,6 +36,27 @@ class App extends Component {
         this.setState({ counters });
     };
 
+    handleAdd = () => {
+        let counters = this.state.counters.slice();
+        const lastID = this.getCounterId();
+        counters.push({
+            id: lastID + 1,
+            value: 0,
+        });
+        this.setState({ counters });
+    };
+
+    getCounterId = () => {
+        let counterId = this.state.counters.length;
+        if (counterId > 0) {
+            counterId = this.state.counters.reduce(
+                (max, c) => (c.id > max ? c.id : max),
+                this.state.counters[0].id
+            );
+        }
+        return counterId;
+    };
+
     render() {
         return (
             <React.Fragment>
@@ -49,6 +70,7 @@ class App extends Component {
                         onReset={this.handleReset}
                         onIncrement={this.handleIncrement}
                         onDelete={this.handleDelete}
+                        onAdd={this.handleAdd}
                         counters={this.state.counters}
                     />
                 </main>
